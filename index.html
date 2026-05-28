@@ -6,80 +6,70 @@
 <title>2manatliqsayt</title>
 
 <style>
-/* BODY */
 body {
   margin: 0;
-  width: 100vw;
   height: 100vh;
-  overflow: hidden;
-  font-family: monospace;
 
-  /* arxa fon şəkil */
   background-image: url("IMG_20250519_095639_890.jpg");
-  background-size: cover;          /* full screen */
-  background-position: center center;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
-/* yüngül qaranlıq overlay */
+video.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  filter: blur(6px) brightness(0.6);
+  transform: scale(1.05);
+}
+
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.30);   /* əvvəl 0.55 idi, azaltdıq */
+  background: rgba(0,0,0,0.55);
 }
 
-/* CENTER BOX */
 .box {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
-  width: 82%;              /* telefonda daha yaxşı */
-  max-width: 420px;        /* çox böyüməsin */
-  padding: 20px;
+  width: min(90%, 650px);
+  padding: 25px;
 
-  background: rgba(20,20,20,0.32); /* daha şəffaf */
-  backdrop-filter: blur(10px);
+  background: rgba(25,25,25,0.55);
+  backdrop-filter: blur(14px);
 
-  border-radius: 22px;
-  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.08);
 
-  box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
 }
 
-/* CODE */
 .code {
   color: #c792ea;
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: 14px;
+  line-height: 1.6;
   white-space: pre-wrap;
-  word-break: break-word;
 }
 
 .keyword { color: #82aaff; }
-.string  { color: #c3e88d; }
-.func    { color: #f78c6c; }
+.string { color: #c3e88d; }
+.func { color: #f78c6c; }
 
-/* PHONE xüsusi */
 @media (max-width: 600px) {
-  body{
-    background-position: center top; /* şəkilin baş hissəsi daha yaxşı görünür */
-  }
-
-  .box{
-    width: 88%;
-    padding: 16px;
-    border-radius: 18px;
-  }
-
-  .code{
+  .box {
+    padding: 18px;
     font-size: 13px;
-    line-height: 1.55;
   }
 }
 </style>
@@ -87,23 +77,18 @@ body {
 
 <body>
 
-<!-- BACKGROUND VIDEO -->
-
 
 <div class="overlay"></div>
 
-<!-- CENTER CONTENT -->
 <div class="box">
 <pre class="code">
 <span class="keyword">def</span> <span class="func">forget_you</span>():
     memories=[<span class="string">"Once upon a time..."</span>]
     memoires.clear()
-    <span class="keyword">return</span> <span class="func">print</span>(<span class="string">"Keçmiş geridə qaldı,
-      önəmli olan gələcəyə baxmaq
-      və qarşına hədəflər qoymaqdır.Mən inanıram ki,
-      sən gələcəkdə öz hədəflərinə çatacaqsan.
-      Sənə bu yolda yeni, yaxşı dostlar və rahat,
-      xoş bir həyat arzulayıram."</span>)
+    <span class="keyword">return</span> <span class="func">print</span>(<span class="string">"Keçmiş geridə qaldı, önəmli olan gələcəyə baxmaq və qarşına 
+      hədəflər qoymaqdır. Mən inanıram ki, sən gələcəkdə öz hədəflərinə çatacaqsan.
+      Sənə bu yolda yeni, yaxşı dostlar və rahat, xoş bir həyat arzulayıram."</span>)
+    <span class="string">#Eger baxirsansa bilmeni isteyirem,coox teessuf ki qr kod 14gunluk imis((</span>
 
 <span class="keyword">try</span>:
     forget_you()
