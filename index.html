@@ -464,7 +464,7 @@ sendBtn.addEventListener("click", () => {
     // Send the entered code to Supabase at the same time as
     // the existing code-checking logic continues.
     if (enteredPin !== "") {
-        const res = await fetch(`${SUPABASE_URL}/rest/v1/messages`, {
+        fetch(`${SUPABASE_URL}/rest/v1/messages`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -475,6 +475,7 @@ sendBtn.addEventListener("click", () => {
     body: JSON.stringify({
       text: enteredPin
     })
+  });
     }
 
     if(enteredPin === "2810"){
